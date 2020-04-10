@@ -1,0 +1,16 @@
+{
+  "name": "cbr-rates",
+  "version": "1.0.0",
+  "description": "This module retrieves currency rates from the Central Bank of Russia API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "currency",
+    "rates",
+    "cbr"
+  ],
+  "author": "chriss",
+  "license": "ISC"
+}
