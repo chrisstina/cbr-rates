@@ -12,5 +12,13 @@
     "cbr"
   ],
   "author": "chriss",
-  "license": "ISC"
+  "license": "ISC",
+  "homepage": "https://github.com/chrisstina/cbr-rates",
+  "repository": "https://github.com/chrisstina/cbr-rates",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "axios": "^0.19.2",
+    "fast-xml-parser": "^3.16.0",
+    "moment": "^2.24.0"
+  }
 }
