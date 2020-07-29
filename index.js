@@ -19,7 +19,7 @@ const parse = (xmlData) => {
     const rates = new Map();
     results.ValCurs.Valute.forEach(rate => {
         rates.set(rate.CharCode, {
-            value: parseFloat(rate.Value),
+            value: parseFloat(rate.Value.replace(/,/g, '.')),
             par: parseInt(rate.Nominal)
         })
     });
