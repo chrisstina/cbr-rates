@@ -1,9 +1,10 @@
 const assert = require('assert'),
+    config = require('config'),
     moment = require('moment'),
     request = require('axios'),
     parser =  require("fast-xml-parser");
 
-const CBR_PRIMARY_URL = 'http://www.cbr.ru/scripts/XML_daily.asp';
+const CBR_PRIMARY_URL = config.get('cbrPrimaryURL')
 
 /**
  *
