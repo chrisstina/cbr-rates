@@ -1,10 +1,18 @@
 const assert = require('assert'),
-    config = require('config'),
-    moment = require('moment'),
     request = require('axios'),
-    parser =  require("fast-xml-parser");
+    parser = require("fast-xml-parser");
 
-const CBR_PRIMARY_URL = config.get('cbrPrimaryURL')
+const CBR_PRIMARY_URL = "http://www.cbr.ru/scripts/XML_daily.asp"
+
+/**
+ * @param {Date|undefined} date
+ * @return {{date_req: string}}
+ */
+const prepareParams = ({date}) => {
+    date = date || new Date();
+    assert(date, 'Please supply a valid date!');
+    return {date_req: `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getFullYear()}`}
+}
 
 /**
  *
@@ -25,22 +33,19 @@ const parse = (xmlData) => {
         })
     });
     return rates;
-};
+}
 
 module.exports = {
-
     /**
      * @param {Date} date
      * @return {Promise<Map>}
      */
-    load: (date = null) => {
-        date = date || new Date();
-        assert(moment(date).isValid(), 'Please supply a valid date!');
+    load: async (date = null) => {
         return request.get(CBR_PRIMARY_URL, {
-            params: {date_req: moment(date).format('DD/MM/YYYY')},
+            params: prepareParams({date}),
             transformResponse: parse
         }).then(res => {
             return res.data;
-        });
+        })
     }
-};
+}

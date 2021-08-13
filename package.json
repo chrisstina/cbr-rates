@@ -1,6 +1,6 @@
 {
   "name": "cbrrates-as-promised",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "This module retrieves currency rates from the Central Bank of Russia API",
   "main": "index.js",
   "scripts": {
@@ -17,9 +17,7 @@
   "repository": "https://github.com/chrisstina/cbr-rates",
   "dependencies": {
     "axios": "^0.21.1",
-    "config": "^3.3.6",
-    "fast-xml-parser": "^3.16.0",
-    "moment": "^2.24.0"
+    "fast-xml-parser": "^3.16.0"
   },
   "devDependencies": {
     "chai": "^4.3.4",
