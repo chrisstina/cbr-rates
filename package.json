@@ -17,7 +17,7 @@
   "repository": "https://github.com/chrisstina/cbr-rates",
   "dependencies": {
     "axios": "^0.21.1",
-    "fast-xml-parser": "^3.16.0"
+    "fast-xml-parser": "^4.2.4"
   },
   "devDependencies": {
     "chai": "^4.3.4",
